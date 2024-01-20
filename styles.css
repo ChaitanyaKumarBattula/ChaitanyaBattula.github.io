@@ -1,0 +1,565 @@
+<style>
+        html {
+            scroll-behavior: smooth;
+            }
+
+        body, h1, p {
+            margin: 0;
+            padding: 0;
+        }
+
+        #index {
+            font-family: 'Arial', sans-serif;
+            background-color: #121212;
+            color: #ffffff;
+            padding: 20px; /* Optional: Add some padding inside the section */
+            min-height: 100vh; /* Optional: Make the section take at least the full height of the viewport */
+            line-height: 1.6;
+        }
+
+        header {
+            background: #333;
+            padding: 10px 0;
+            position: fixed;
+            z-index: 10;
+            top: 0;
+            left: 0; /* Add this line if it's not already there */
+            right: 0; /* Add this line if it's not already there */
+            width: 100%;
+            margin: 0; /* Reset any default margins */
+            box-sizing: border-box; /* Make sure padding doesn't affect the width */
+            transition: background-color 0.3s, box-shadow 0.3s;
+        }
+
+        header.scrolled {
+            background-color:#333; /* New background color when scrolled */
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2); /* Optional: Adds shadow for depth */
+            background-color: #333; /* Example: change to white when scrolled */
+            color: #333;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 10px 15px; /* Add padding to create a larger clickable area */
+            display: inline-block; /* Needed to apply padding correctly */
+            font-size: 1.1em;
+        }
+
+            /* New styles for the active class */
+        nav ul li a.active {
+            /*background-color: #0376fa;*/ /* Change the color to whatever you want for the active state */
+            border-radius: 5px; 
+            color:#0376fa;/* Optional: adds rounded corners to the box */
+            /* You can adjust the padding here if you want a larger or smaller rectangle */
+}
+
+        nav ul li a:hover {
+            background-color: #555; /* Darken the link on hover */
+            color: #fff; /* Keep text color white */
+        } 
+
+        .container {
+            max-width: 1170px;
+            margin: auto;
+            overflow: hidden;
+            padding: 0 20px;
+        }
+
+        .home-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 100px 0;
+        }
+
+        .info {
+            flex-basis: 50%;
+            /* Additional styling for your info here */
+        }
+
+        .info i {
+            margin-right: 8px; /* Space between icon and text */
+            color: #ffffff; /* Icon color */
+        }
+
+        .profile-pic {
+            flex-basis: 50%;
+            text-align: right; /* Align the image to the right */
+            margin-top: 90px;
+        }
+
+        .profile-pic img {
+	    max-width: 100%;
+	    height: auto;
+	    border-radius: 100%; /* This will make the image circular */
+	    border: 3px solid #ffffff; /* Example border: white, 3 pixels thick */
+	    /* If the image is not a square, you may also need to set a specific width and height */
+    	    width: 400px; /* Example width */
+    	    height: 400px; /* Example height, make it the same as width for a perfect circle */
+    	    object-fit: cover; /* This will cover the area without stretching the image */
+	    box-shadow: 0 8px 15px rgba(0,0,0,0.6); /* Optional: Adds a shadow for a 3D effect */
+        }
+	.icon-link {
+    	    font-size: 20px;	
+            margin-right: 10px; /* Adjust the value to increase or decrease the space between icons */
+    		text-decoration: none; /* Removes the underline from the links */
+    		color: inherit;
+            transition: color 0.3s ease; /* The icon color will be the same as the text color */
+	}
+	.icon-link :hover {
+    		color:rgb(0, 106, 255); /* Color when the mouse hovers over the icon */
+	}
+	.greeting {
+		display: inline-block; /* Makes the background only as wide as the content */
+    		background-color: #21C87A; /* Green background */
+    		color: #ffffff; /* White text */
+    		padding: 5px 10px; /* Adjust the padding to control the size of the box */
+    		margin-bottom: 5px; /* Space between greeting and name */
+    		border-radius: 5px; /* Optional: adds rounded corners to the box */
+        }
+	.info h1 {
+    		font-size: 2.5em; /* Makes the font size larger */
+    		font-weight: bold; /* Makes the font weight bold */
+    		margin-bottom: 10px; /* Space below the name */
+	}
+	.info .title {
+    		font-size: 1.8em; /* 60% of the size of the name if the name is 3em */
+    		font-weight: bold; /* Makes the title bold */
+    		color: #FFFFFF; /* Assuming white color for the title */
+    }
+
+
+      #typewriter {
+        color: #0072ef;
+        font-weight: bold;
+      }
+
+    #cursor {
+        color: #0072ef;
+        animation: blink 1s linear infinite;
+      }
+
+      @keyframes blink {
+        0% {
+          opacity: 100%;
+        }
+        50% {
+          opacity: 0%;
+        }
+      }
+
+
+    main {
+        padding-top: 60px; /* This value should be equal to or greater than the height of your fixed header */
+    }
+
+    #about {
+        font-family: 'Arial', sans-serif;
+        padding-top: 100px;
+        background-color: #007bff;
+        color: white;
+        min-height: 50vh; /* Adjust this value to decrease the height */
+        line-height: 1.6;
+        padding: 100px 0;
+        display: flex;
+        align-items: start;
+        justify-content: center;
+        padding-bottom: 50px;
+    }
+
+    #about h1 {
+        font-size: 3em; /* Adjust the size as needed */
+    }
+
+    .about-section {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        padding: 0 20px; /* Added padding for spacing */
+    }
+ 
+    .left-column, .right-column {
+        width: 50%;
+    }
+    
+    .left-column h1, .right-column h1 {
+        margin-bottom: 20px; /* Space below the title */
+    }
+    
+    .left-column p, .right-column p {
+        margin-bottom: 40px; /* Increased space between paragraphs */
+    }
+
+    #about p:last-child, #about h1:last-child {
+        margin-bottom: 10px; /* Reduce this as needed */
+    }
+
+    #about p:last-child {
+        margin-bottom: 10px; /* Reduce the bottom margin of the last paragraph */
+    }
+
+    @media (max-width: 768px) {
+        .about-section {
+          flex-direction: column;
+        }
+      
+        #about {
+            /* Adjust padding and margins for smaller screens as needed */
+            padding-bottom: 30px;
+        }
+
+        .left-column, .right-column {
+          width: 100%; /* Each column takes the full width on small screens */
+          padding: 0 20px; 
+        }
+      
+        .left-column {
+            padding-bottom: 0; /* Remove the spacing between columns on small screens */
+        }
+
+        #about p:last-child {
+            margin-bottom: 10px;
+        }
+
+      }
+      
+      #education {
+        background-color: #121212;
+        color: #ffffff;
+        padding: 50px 0;
+        min-height: 100vh;
+        padding-top: 100px;
+        padding-bottom: 50px;
+        min-height: 100vh;
+    }
+    
+    #education .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+         margin: auto;
+        padding: 0;
+    }
+    
+    #education h1 {
+        margin-bottom: 30px;
+        font-size: 2.5em;
+        text-align: center;
+    }
+    
+    .education-entry {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    
+    .education-entry .education-text {
+        padding-left: 0;
+        margin-left: 0;
+    
+    }
+
+    .education-entry .education-text, .education-entry .certificate {
+        width: 48%;
+    }
+    
+    .education-entry h2 {
+        font-size: 1.5em;
+    }
+    
+    .education-entry .degree, .education-entry .year {
+        font-size: 1.2em;
+    }
+    
+    .education-entry .education-text p {
+        margin-bottom: 15px; /* Add space below each paragraph */
+        line-height: 1.6; /* Optional: Adjust line spacing for readability */
+        width: auto
+    }
+
+    .certificate img {
+        width: 70%;
+        border-radius: 4px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+               
+    }
+    .certificate .pdf-view-button {
+        display: inline-block;
+        margin: 20px auto; /* Center the button */
+        padding: 10px 20px;
+        background-color: #007bff; /* Blue background */
+        color: #ffffff; /* White text */
+        text-decoration: none;
+        border-radius: 4px;
+        text-align: center;
+    }
+
+    .certificate .pdf-view-button:hover {
+        background-color: #0056b3; /* Darker blue on hover */
+    }
+
+    @media (max-width: 768px) {
+        .education-entry {
+            flex-direction: column;
+            align-items: center;
+        }
+    
+        .education-entry .education-text, .education-entry .certificate {
+            width: 100%;
+        }
+    
+        .certificate img {
+            width: 80%;
+        }
+        .certificate .pdf-view-button {
+            width: auto;
+        }
+    }
+    .animated-line {
+        height: 2px;
+        background: #007bff; /* This color can be changed to match your design */
+        margin: 50px 0; /* Adjust the space around the line as needed */
+        width: 0; /* Line starts out with no width */
+        left: 0;
+        right: 0;
+        visibility:visible; /* Hide the line initially */
+        animation: drawLine 1s ease-out forwards; /* Animate the line to draw from left to right */
+    }
+    
+    @keyframes drawLine {
+        0% {
+            visibility: visible; /* Make the line visible at the start of the animation */
+            width: 0;
+        }
+        100% {
+            visibility: visible;
+            width: 100%; /* The line grows to full container width */
+        }
+    }
+
+
+    
+    .skills-container {
+        background-color: #121212;
+        color: #ffffff;
+        font-family: 'Arial', sans-serif;
+        text-align: center;
+        padding-top: 5px;
+        padding: 35px; /* Fixed unit */
+    }
+    
+    .skills-title {
+        font-size: 2.5em;
+        margin-top: 100px; /* Increase top margin to create more space above the title */
+        margin-bottom: 40px;
+        
+    }
+    
+    .skills-columns {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-bottom: 20px;
+    }
+    
+    .skills-column {
+        width: 30%; /* Slightly less than one-third for spacing */
+        margin-right: 2%; /* Space between columns, adjust as necessary */
+    }
+    
+    .skill {
+        background-color: #121212; /* Dark background for skill bar */
+        margin-bottom: 30px;
+        position: relative;
+        padding: 5px; /* Optional: Adjust padding to control the overall size */
+        height: 20px; /* Reduced height for a thinner bar */
+        align-items: center;
+        
+    }
+    
+    .skill-name {
+        text-align: left;
+        display: block;
+        left: 0;
+        margin-bottom: 5px;
+        margin-right: 40px;
+    }
+    
+    .skill-value {
+        text-align: left;
+        margin-bottom: 5px;
+        display: inline-block;
+        position: absolute;
+        margin-right: 10px;
+        right: 0; /* Align to the right */
+        top: 0; /* Align to the top of the bar */
+    }
+    
+    .skill-bar {
+        width: 100%;
+        background-color: #ffffff;
+        height: 10px;
+        /*width: 75%; /* Or any other percentage or fixed width you desire */
+        margin: auto; /* This centers the bar if it's smaller than the full width */
+        border-radius: 5px;
+        margin-top: 5px; 
+        position: relative; /* Needed for absolute positioning of pseudo-element */
+        overflow: hidden;
+        
+        
+    }
+        
+    .skill-percentage {
+        background-color: #0f62fe;
+        height: 10px;
+        width: 75%;
+        border-radius: 5px 0 0 5px; /* Rounded corners on the left side */
+    }
+
+    
+    /* Remove margin on the last column to avoid unnecessary spacing on the right */
+    .skills-column:nth-child(3n) {
+        margin-right: 0;
+    }
+    
+    
+    
+    .projects-container {
+        background-color: #121212; /* Dark background */
+        color: #ffffff; /* White text color */
+        font-family: 'Arial', sans-serif;
+        padding: 20px;
+        text-align: center;
+    }
+    
+    .projects-title {
+        font-size: 2.5em;
+        margin-bottom: 10px;
+        margin-top: 80px; 
+    }
+    
+    .project-summary {
+        margin-bottom: 30px; /* Space between summary and project domains */
+        text-align: left; /* Align the summary text to the left */
+    }
+
+    .summary-title {
+        font-size: 2em;
+        color: #ffffff;
+        margin-bottom: 10px;
+        margin-top: 50px;
+
+    }
+
+    .total-projects {
+        font-size: 1.5em;
+        color: #ffffff;
+        /* Add more styling as needed */
+    }
+
+    .project-count {
+        font-weight: bold;
+        /* Add more styling as needed */
+    }
+
+    .project-domain {
+        margin-bottom: 20px; /* Space between domains */
+    }
+    
+    .domain-name {
+        font-size: 2em;
+        color: #ffffff;
+        margin-bottom: 10px;
+        text-align: left;
+    }
+    
+    .project-list {
+        list-style-type: none; /* Removes default list styling */
+        padding: 0; /* Resets default padding */
+    }
+    
+    .project {
+        background-color: #333; /* Background color for individual projects */
+        margin-bottom: 10px; /* Space between projects */
+        padding: 10px; /* Padding inside the project items */
+        border-radius: 5px; /* Rounded corners */
+        text-align: left;
+    }
+
+
+    .project-page #project {
+        padding-top: 160px; /* Height of existing header + height of new fixed header */
+        /* Other styles */
+    }
+
+    /* Existing site-wide header */
+
+    .domain-header {
+        text-align: center;
+        margin-bottom: 30px;
+        margin-top: 30px;
+        background-color: #444; /* Background color of the header */
+        padding: 10px; /* Padding inside the header for spacing */
+        border-radius: 50px; 
+    }
+    
+    .domain-header a {
+        margin: 0 20px;
+        color: #ffffff;
+        text-decoration: none;
+        font-size: 1.1em; 
+        /* Add more styling as needed */
+    }
+    
+    .domain-header a:hover {
+        text-decoration: underline;
+        color: blue;
+        /* Style for hover state */
+    }
+    
+    .project-page .domain-header {
+        /* Fixed header styles */
+        position: fixed;
+        /* ... other styles ... */
+    }
+    
+    .project-domain {
+        padding-top: 70px; /* Height of the fixed header + 10px for some space */
+        margin-top: -70px; /* Negative margin to offset the padding */
+    }
+    
+    .project-page .domain-header {
+        position: fixed;
+        top: 0; /* Adjust this to accommodate any existing header height */
+        width: 100%;
+        background-color: #444; /* Your chosen background color */
+        padding: 10px;
+        border-radius: 50px;
+        text-align: center;
+        z-index: 100; /* Ensure it's above other elements */
+        /* Other styles as needed */
+    }
+    
+    .project-page {
+        padding-top: 100px; /* Height of the fixed .domain-header */
+        /* Other styles for the project page */
+    }
+    
+
+
+</style>

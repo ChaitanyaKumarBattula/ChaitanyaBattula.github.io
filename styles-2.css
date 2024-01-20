@@ -1,0 +1,105 @@
+/* Main content and certifications grid */
+main {
+    background-color: #121212;
+    color: white;  
+}
+
+.container {
+    max-width: 1170px;
+    margin: auto;
+}
+
+.certifications-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.certification-card {
+    background-color: #1C1C1C;
+    border-radius: 5px;
+    padding: 1rem;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+    margin-bottom: 1rem;
+}
+
+.certification-logo {
+    width: 100px;
+    height: auto;
+    margin-bottom: 0.5rem;
+}
+
+.certification-details h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.certification-details p {
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.certification-verify {
+    background-color: #21C87A;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    text-decoration: none;
+    display: block; /* Make link a block element to center it */
+    width: fit-content;
+    margin: auto;
+    text-align: center;
+}
+
+.certification-verify:hover {
+    background-color: #19a966;
+}
+
+
+
+/* Add this to your styles.css file */
+h1, h2, h3 {
+    color: #ffffff; /* Changes color to white */
+}
+
+a {
+    text-decoration: none; /* Removes underline */
+    color: #ffffff; /* Changes link color to white */
+}
+
+a:hover {
+    color: #ccc; /* Color when the mouse hovers over the link */
+}
+
+a:visited {
+    color: #ffffff; /* Changes visited link color to white */
+}
+
+.certification-verify:hover {
+    background-color: #19a966; /* Changes background color on hover */
+    text-decoration: none; /* Ensures no underline on hover */
+}
+
+/* Continue with the rest of your existing CSS */
+
+/* ... other styles ... */
+
+.section-title {
+    text-align: left;
+    margin-top: 6rem;
+    margin-bottom: 2rem; /* Adjust the space below the section title */
+    color: #fff; /* If you want to ensure the title is white */
+    font-size: 2rem; /* Adjust the font size as needed */
+}
+
+.intro-text {
+    text-align: center;
+    margin-bottom: 2rem; /* Space between the intro text and the certification cards */
+    color: #ccc; /* Lighter text color for the intro (optional) */
+    max-width: 800px; /* Max width of the text to maintain readability */
+    margin-left: auto; /* Center the intro text block horizontally */
+    margin-right: auto;
+    font-size: 1.2rem; /* Adjust the font size as needed */
+}
