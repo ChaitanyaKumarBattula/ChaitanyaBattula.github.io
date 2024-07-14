@@ -13,22 +13,35 @@ body {
     color: #ffffff; /* White color for the text */
     text-align: center; /* Center align the section title */
     margin: 40px 0;
-    /*margin: 40px auto;*/
     margin-right: -140px;
-    margin-bottom: 90px ;
+    margin-bottom: 40px ;
     padding: 5px 10px; /* Add padding to trim the edges */
-    border-radius: 10px; /* Rounded corners */
-    margin-top: 50px;
- }
+    margin-top: 100px;    
+}
 
 .experience-entry {
-    margin: 0; /* Remove any margin */
-    padding: 25px; /* Add padding for spacing within the entry */
+    /* margin: 25px; Remove any margin */
+    /* margin-bottom: 2px; */
+    margin: 10px 10px 5px 10px;
+    padding: 15px; /* Add padding for spacing within the entry */
     text-align: left; /* Align text to the left */
-    background-color: #444; /* Light grey background */
+    background-color: #112233;
     color: #ffffff; /* Dark text color for readability */
     border-radius: 5px; /* Optional: rounded corners */
     box-shadow: 0 2px 4px rgba(0,0,0,0.2); 
+    display: flex; /* Flexbox layout for image and text alignment */
+    align-items: flex-start;
+}
+
+.experience-entry img {
+    width: 100px; /* Increased width */
+    height: 100px; /* Increased height */
+    margin-right: 20px;
+    border-radius: 10px;
+}
+
+.experience-details {
+    flex: 1;
 }
 
 .experience-entry h2, .experience-entry p {
@@ -53,7 +66,7 @@ body {
     max-width: 100%;
     margin: 0; /* Align the container with the screen origin */
     padding: 0; /* Remove padding */
-    margin-bottom: 100px;
+    margin-bottom: 5px;
     overflow: hidden;
 }
 
@@ -65,4 +78,16 @@ body {
     .experience-entry p {
         font-size: 1em; /* Adjust paragraph font size for mobile as needed */
     }
+
+    .experience-entry {
+        flex-direction: column; /* Stack image and text vertically on mobile */
+        align-items: center;
+    }
+
+    .experience-entry img {
+        margin-bottom: 20px; /* Add margin below image on mobile */
+    }
 }
+
+
+
