@@ -1,0 +1,145 @@
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+    gap: 55px 20px;
+    margin-top: 10px;
+    margin-bottom: 60px;
+}
+
+.project-card {
+    background-color: #1e1e1e; /* Dark background */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow effect */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Ensure even distribution of elements */
+    height: 100%; /* Ensure cards are of equal height */
+    align-items: flex-start; /* Align children to the start of the flex container */
+}
+
+.project-image1 {
+    width: 100%; /* Set the width to 100% of the card */
+    max-width: 450px; /* Ensure image is not too wide */
+    height: 150px; /* Fixed height for uniform size */
+    border-radius: 8px; /* Rounded corners for the image */
+    /*margin-bottom: 2px;*/
+    margin: 0;
+    object-fit: cover; /* Ensure the image fits the container without distortion */
+    display: block;
+}
+
+.project-card h2 {
+    font-size: 1.5em;
+    margin: 0;
+    /*margin-top: 2px;
+    margin-bottom: 1px;*/
+    color: #ffffff;
+}
+
+.project-card p {
+    font-size: 1em;
+    margin-bottom: 2px;
+    color: #cccccc;
+    text-align: justify;
+}
+
+.project-link {
+    display: inline-block; /* Inline block keeps the button from stretching */
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    width: auto; /* Ensure the button only takes as much space as needed */
+    margin-top: 10px;
+    align-self: flex-start; /* Prevent the button from stretching to the full width */
+}
+
+.project-link:hover {
+    background-color: #0056b3;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+
+
+
+#contact {
+    padding: 15px 10px 20px; /* Increase top padding to push the section down */
+    background-color: #1e1e1e;
+    color: #fff;
+    text-align: center;
+}
+
+#contact h2 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+#contact p {
+    font-size: 1.1em;
+    margin-bottom: 30px;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    max-width: 500px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #cccccc;
+    font-size: 1em;
+}
+
+.contact-form button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #0056b3;
+}
+
+
+.social-links {
+    margin-top: 5px;
+}
+
+.social-links ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.social-links ul li {
+    display: inline;
+    margin-right: 5px;
+}
+
+.social-links ul li a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.social-links ul li a:hover {
+    text-decoration: underline;
+}
