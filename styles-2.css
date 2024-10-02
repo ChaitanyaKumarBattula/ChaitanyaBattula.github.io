@@ -103,3 +103,22 @@ a:visited {
     margin-right: auto;
     font-size: 1.2rem; /* Adjust the font size as needed */
 }
+
+
+.resume-download-btn {
+    display: inline-block;
+    font-size: 16px;
+    padding: 10px 20px;
+    background-color:#EE224A; /* Button background color */
+    color: white; /* Text color */
+    border: none;
+    border-radius: 5px; /* Rounded corners */
+    text-decoration: none;
+    margin-left: 10px; /* Space between button and icons */
+    transition: background-color 0.3s ease;
+}
+
+.resume-download-btn:hover {
+    background-color: #EE224A; /* Darken button color on hover */
+    color: #DDDBCB;
+}
