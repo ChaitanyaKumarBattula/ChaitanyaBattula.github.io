@@ -97,7 +97,7 @@
         .profile-pic {
             flex-basis: 50%;
             text-align: right; /* Align the image to the right */
-            margin-top: 90px;
+            margin-top: 10px;
         }
 
         .profile-pic img {
