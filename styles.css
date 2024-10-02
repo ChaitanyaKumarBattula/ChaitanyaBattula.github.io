@@ -112,7 +112,7 @@
 	    box-shadow: 0 8px 15px rgba(0,0,0,0.6); /* Optional: Adds a shadow for a 3D effect */
         }
 	.icon-link {
-    	    font-size: 20px;	
+    	    font-size: 35px;	
             margin-right: 10px; /* Adjust the value to increase or decrease the space between icons */
     		text-decoration: none; /* Removes the underline from the links */
     		color: inherit;
